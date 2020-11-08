@@ -1,0 +1,95 @@
+img {
+  vertical-align: middle;
+}
+
+.container {
+  max-width: 900px;
+  height: 400px;
+  position: relative;
+}
+.container a:hover{
+  text-decoration: none;
+}
+.mySlides {
+  display: none;
+  height: 350px;
+}
+.cursor {
+  cursor: pointer;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;  
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+  margin-right: 15px;
+}
+.prev{
+  left:  0;
+  margin-left: 15px;
+  border-radius: 0 3px 3px 0;
+}
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 20px 16px;
+  color: white;
+}
+.caption-container , #caption{
+  background-color: #222;
+  font-weight: bold;
+  color: #f1f1f1;
+
+} 
+.row{
+  display: flex;
+  justify-content: center;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+margin-left:15px;
+ height: 35px;
+ width: 50px;
+ border-radius: 50%;
+}
+
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}

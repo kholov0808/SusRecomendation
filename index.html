@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SusRecomend</title>
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/index8.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/index15.css">
+</head>
+<body>
+  <div class="top-container">
+    <div class="container">
+        <div class="mySlides">
+          <div class="numbertext">1 / 6</div>
+          <img src="img/voenni_1.jpg" style="width:100%" height="400px">
+        </div>
+      
+        <div class="mySlides">
+          <div class="numbertext">2 / 6</div>
+          <img src="img/Boevik_3.jpg" style="width:100%" height="400px">
+        </div>
+      
+        <div class="mySlides">
+          <div class="numbertext">3 / 6</div>
+          <img src="img/Drama_1.jpg" style="width:100%" height="400px">
+        </div>
+          
+        <div class="mySlides">
+          <div class="numbertext">4 / 6</div>
+          <img src="img/Drama_3.jpg" style="width:100%" height="400px">
+        </div>
+      
+        <div class="mySlides">
+          <div class="numbertext">5 / 6</div>
+          <img src="img/kriminal_2.jpg" style="width:100%" height="400px">
+        </div>
+          
+        <div class="mySlides">
+          <div class="numbertext">6 / 6</div>
+          <img src="img/melodrama_2.jpg" style="width:100%" height="400px">
+        </div>
+          
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+      
+        <div class="caption-container">
+          <p id="caption"></p>
+        </div>
+      
+        <div class="row">
+              <div class="column" onclick="currentSlide(1)">
+                <img class="demo cursor" src="img/Boevik_3.jpg" style="width:100%"   alt="Неудержимые 2">
+              </div>
+              <div class="column">
+                <img class="demo cursor" src="img/voenni_1.jpg" style="width:100%" onclick="currentSlide(2)" alt="Солдат">
+              </div>
+              <div class="column">
+                <img class="demo cursor" src="img/Drama_1.jpg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+              </div>
+              <div class="column">
+                <img class="demo cursor" src="img/Drama_3.jpg" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+              </div>
+              <div class="column">
+                <img class="demo cursor" src="img/kriminal_2.jpg" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
+              </div>    
+              <div class="column">
+                <img class="demo cursor" src="img/melodrama_2.jpg" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
+              </div>
+        </div>
+    </div>
+      
+
+          
+  </div>
+  
+  <div class="header" id="myHeader">
+    <a href="" class="logo">SusRecomend</a>
+    <div class="header-right">
+      
+      <span class="span" onclick="openNav()"><a href="#"> <i class="glyphicon glyphicon-user"></i></a></span>
+      <span class="span" ><a href="" class="voiti" title='Войти'  ><i class=" glyphicon glyphicon-cog"></i></a></span>
+       
+    </div>
+  </div>
+  
+  
+  
+   <!-- The overlay -->
+   <div id="myNav" class="overlay">
+  
+    <!-- Button to close the overlay navigation -->
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  
+    <!-- Overlay content -->
+    <div class="overlay-content">
+      <form action="/action_page.php" style="max-width:500px;margin:auto">
+        <h2>Register Form</h2>
+        <div class="input-container">
+          <i class="fa fa-user icon"></i>
+          <input class="input-field" type="text" placeholder="Username" name="usrnm">
+        </div>
+      
+        <div class="input-container">
+          <i class="fa fa-envelope icon"></i>
+          <input class="input-field" type="text" placeholder="Email" name="email">
+        </div>
+        
+        <div class="input-container">
+          <i class="fa fa-key icon"></i>
+          <input class="input-field" type="password" placeholder="Password" name="psw">
+        </div>
+      
+        <button type="submit" class="btn">Register</button>
+      </form>
+      <div class="icons_soc">
+        <div class="icon-soc" ><a href="#"  class="fa fa-vk fa-2x"></a></div>
+        <div class="icon-soc" ><a href="#" class="fa fa-instagram fa-2x"></a></div>
+        <div class="icon-soc" ><a href="#" class="fa fa-google"></a></div>
+      </div>  
+    </div>
+  
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class="content">
+    <h2>Альбомы</h2>
+    <div id="myBtnContainer">
+      <button class="btne activee" onclick="filterSelection('all')"> Show all</button>
+      <button class="btne" onclick="filterSelection('boevik')"> Боевик</button>
+      <button class="btne" onclick="filterSelection('voenni')"> Военный</button>
+      <button class="btne" onclick="filterSelection('Drama')"> Драма</button>
+      <button class="btne" onclick="filterSelection('komediya')"> Комедия</button>
+      <button class="btne" onclick="filterSelection('kriminal')"> Криминал</button>
+      <button class="btne" onclick="filterSelection('melodrama')"> Мелодрама</button>
+      <button class="btne" onclick="filterSelection('sport')"> Спорт</button>
+    </div>
+    <div class="rows">
+      <div class="columne boevik">
+        <div class="contente">
+          <img src="img/Boevik_1.jpg" alt="Mountains" style="width:100%" height="100%">
+          <h4>Неудержимые 2</h4>
+          <p>Боевик – кинематографический жанр, в котором главный герои или герои сталкиваются с рядом проблем, решить которые, не прибегнув к насилию, не удается. Фильмы боевики изобилуют насилием во всех его проявлениях, безумными погонями, дорогостоящими спецэффектами и сложными каскадерскими трюками.</p>
+        </div>
+      </div>
+      <div class="columne boevik">
+        <div class="contente">
+          <img src="img/Boevik_2.jpg" alt="Lights" style="width:100%" height="100%">
+          <h4>Joe 2 Retaliation</h4>
+          <p>Главные герои часто оказываются в, казалось бы, безвыходных, смертельно опасных ситуациях, выбраться живыми из которых им удается благодаря их профессиональной подготовке, находчивости и решительности. В абсолютном большинстве боевиков добро торжествует, а злодеи погибают или оказываются за решеткой.</p>
+        </div>
+      </div>
+      <div class="columne boevik">
+        <div class="contente">
+          <img src="img/Boevik_3.jpg" alt="Nature" style="width:100%" height="100%">
+          <h4>Солдат</h4>
+          <p>Жанр боевика легко «смешивается» с любым другим жанром, однако лучше всего сочетается с приключенческими фильмами и триллерами.
+
+            Несмотря на то, что боевая составляющая присутствовала во многих фильмах со времен зарождения кинематографа, в отдельный узнаваемый жанр боевики выделились лишь в 1970 годах. Прогресс в области компьютерной графики позволил значительно сократить расходы на создание боевиков, съемки которых в прошлом не обходились без участия профессиональных каскадеров и дорогостоящих декораций. </p>
+        </div>
+      </div>
+    
+      <div class="columne voenni">
+        <div class="contente">
+          <img src="img/voenni_1.jpg" alt="Car" width="100%" height="100%" height="100%">
+          <h4>Retro</h4>
+          <p>Военные фильмы – жанр кинематографического искусства, посвященный войне и приемам ее ведения. Обычно это фильмы о морских, воздушных или наземных сражениях, центральное место в которых отведено масштабным сценам боев, из-за своей ключевой роли обычно помещаемых в концовку фильма. </p>
+        </div>
+      </div>
+      <div class="columne voenni">
+        <div class="contente">
+          <img src="img/voenni_2.jpg" alt="Car" style="width:100%" height="100%">
+          <h4>Fast</h4>
+          <p>В числе используемых в военных фильмах тем – известные сражения, выживание и побеги, самопожертвование, бессмысленность и бесчеловечность войн, влияние войны на общество, а также поднимаемые войной проблемы морали и человечности.
+
+            Описываемые в фильме события могут быть вымышленными, однако чаще встречаются военно-исторические и военно-биографические фильмы.</p>
+        </div>
+      </div>
+      <div class="columne voenni">
+        <div class="contente">
+          <img src="img/voenni_3.jpg" alt="Car" style="width:100%" height="100%">
+          <h4>Classic</h4>
+          <p>Наиболее популярной темой военных фильмов на сегодняшний день является Вторая мировая война. Некоторые критики отмечают схожесть военных фильмов и фильмов вестернов из-за гнетущей атмосферы и других характерных особенностей жанра.
+
+В различных странах существуют свои собственные традиции и особенности военного кинематографа. Так, например, в российском и советском кино любой фильм о Великой отечественной войне называют военным, независимо от того присутствуют ли в нем батальные сцены или нет.</p>
+        </div>
+      </div>
+    
+      <div class="columne Drama">
+        <div class="contente">
+          <img src="img/Drama_1.jpg" alt="father" style="width:100%" height="100%">
+          <h4> игра и имитатцию</h4>
+          <p>Драматические фильмы – один из наиболее распространенных кинематографических жанров. Как правило, эти фильмы повествуют о частной жизни и социальных конфликтах персонажей, акцентируя внимание на воплощенных в их поступках и поведении общечеловеческих противоречиях. Характерной чертой жанра является приближенная к реальности стилистика и бытовой сюжет.</p>
+        </div>
+      </div>
+      <div class="columne Drama">
+        <div class="contente">
+          <img src="img/Drama_2.jpg" alt="Mather" style="width:100%" height="100%">
+          <h4> Брат</h4>
+          <p>Драматические фильмы – один из наиболее распространенных кинематографических жанров. Как правило, эти фильмы повествуют о частной жизни и социальных конфликтах персонажей, акцентируя внимание на воплощенных в их поступках и поведении общечеловеческих противоречиях. Характерной чертой жанра является приближенная к реальности стилистика и бытовой сюжет.</p>
+        </div>
+      </div>
+      <div class="columne Drama">
+        <div class="contente">
+          <img src="img/Drama_3.jpg" alt="Children" style="width:100%" height="100%">
+          <h4>Джокер</h4>
+          <p>Драматические фильмы – один из наиболее распространенных кинематографических жанров. Как правило, эти фильмы повествуют о частной жизни и социальных конфликтах персонажей, акцентируя внимание на воплощенных в их поступках и поведении общечеловеческих противоречиях. Характерной чертой жанра является приближенная к реальности стилистика и бытовой сюжет.</p>
+        </div>
+      </div>
+      
+
+      <div class="columne komediya">
+        <div class="contente">
+          <img src="img/komediya_1.jpg" alt="father" style="width:100%" height="100%">
+          <h4> приказ</h4>
+          <p>Комедия как жанр искусства возникла еще во времена Древней Греции. Словом комедия (от греческого «komodia») характеризовали вызывающие смех спектакли, а после зарождения кинематографа и фильмы, призванные поднимать настроение и вызывать у зрителя смех. Огромной популярностью они пользовались еще в эпоху немого кино, а лучшие фильмы того времени (например, картины с участием легендарного Чарли Чаплина) не теряют популярности и по сей день.</p>
+        </div>
+      </div>
+      <div class="columne komediya">
+        <div class="contente">
+          <img src="img/komediya_2.jpg" alt="Mather" style="width:100%" height="100%">
+          <h4>Липучка</h4>
+          <p>Комедия как жанр искусства возникла еще во времена Древней Греции. Словом комедия (от греческого «komodia») характеризовали вызывающие смех спектакли, а после зарождения кинематографа и фильмы, призванные поднимать настроение и вызывать у зрителя смех. Огромной популярностью они пользовались еще в эпоху немого кино, а лучшие фильмы того времени (например, картины с участием легендарного Чарли Чаплина) не теряют популярности и по сей день.</p>
+        </div>
+      </div>
+      <div class="columne komediya">
+        <div class="contente">
+          <img src="img/komediya_3.jpg" alt="Children" style="width:100%" height="100%">
+          <h4>Как я стал русским</h4>
+          <p>Комедия как жанр искусства возникла еще во времена Древней Греции. Словом комедия (от греческого «komodia») характеризовали вызывающие смех спектакли, а после зарождения кинематографа и фильмы, призванные поднимать настроение и вызывать у зрителя смех. Огромной популярностью они пользовались еще в эпоху немого кино, а лучшие фильмы того времени (например, картины с участием легендарного Чарли Чаплина) не теряют популярности и по сей день.</p>
+        </div>
+      </div>
+
+
+      <div class="columne kriminal">
+        <div class="contente">
+          <img src="img/kriminal_1.jpg" alt="father" style="width:100%" height="100%">
+          <h4>Шальная карта</h4>
+          <p>Криминальные фильмы – кинематографический жанр, фокусирующийся на криминале и так или иначе связанными с ним темами. Стилистический подход к съемке криминальных фильмов варьируется от реалистичного изображения реально существовавших преступников до неправдоподобных историй о вымышленных злых гениях. Жанр достаточно близок и нередко пересекается с жанрами детектива и боевика. Однако насилие, являющееся неотъемлемой часть боевика, и присущие детективу элементы расследования и неопределенности в нем могут отсутствовать.</p>
+        </div>
+      </div>
+      <div class="columne kriminal">
+        <div class="contente">
+          <img src="img/kriminal_2.jpg" alt="Mather" style="width:100%" height="100%">
+          <h4>Бумер</h4>
+          <p>Криминальные фильмы – кинематографический жанр, фокусирующийся на криминале и так или иначе связанными с ним темами. Стилистический подход к съемке криминальных фильмов варьируется от реалистичного изображения реально существовавших преступников до неправдоподобных историй о вымышленных злых гениях. Жанр достаточно близок и нередко пересекается с жанрами детектива и боевика. Однако насилие, являющееся неотъемлемой часть боевика, и присущие детективу элементы расследования и неопределенности в нем могут отсутствовать.</p>
+        </div>
+      </div>
+      <div class="columne kriminal">
+        <div class="contente">
+          <img src="img/kriminal_3.jpg" alt="Children" style="width:100%" height="100%">
+          <h4>Шпионов</h4>
+          <p>Криминальные фильмы – кинематографический жанр, фокусирующийся на криминале и так или иначе связанными с ним темами. Стилистический подход к съемке криминальных фильмов варьируется от реалистичного изображения реально существовавших преступников до неправдоподобных историй о вымышленных злых гениях. Жанр достаточно близок и нередко пересекается с жанрами детектива и боевика. Однако насилие, являющееся неотъемлемой часть боевика, и присущие детективу элементы расследования и неопределенности в нем могут отсутствовать.</p>
+        </div>
+      </div>
+
+      <div class="columne melodrama">
+        <div class="contente">
+          <img src="img/melodrama_1.jpg" alt="father" style="width:100%" height="100%">
+          <h4>телехронитель</h4>
+          <p>Фильмы мелодрамы – жанр кинематографа с усиленной чувственной и эмоциональной составляющей, заметно превалирующей над детализацией персонажей, которые зачастую изображаются схематично и стереотипно.</p>
+        </div>
+      </div>
+      <div class="columne melodrama">
+        <div class="contente">
+          <img src="img/melodrama_2.jpg" alt="Mather" style="width:100%" height="100%">
+          <h4>Папик</h4>
+          <p>Фильмы мелодрамы – жанр кинематографа с усиленной чувственной и эмоциональной составляющей, заметно превалирующей над детализацией персонажей, которые зачастую изображаются схематично и стереотипно.</p>
+        </div>
+      </div>
+      <div class="columne melodrama">
+        <div class="contente">
+          <img src="img/melodrama_3.jpg" alt="Children" style="width:100%" height="100%">
+          <h4>Одиржимость</h4>
+          <p>Фильмы мелодрамы – жанр кинематографа с усиленной чувственной и эмоциональной составляющей, заметно превалирующей над детализацией персонажей, которые зачастую изображаются схематично и стереотипно.</p>
+        </div>
+      </div>
+
+      <div class="columne sport">
+        <div class="contente">
+          <img src="img/sport_1.jpg" alt="father" style="width:100%" height="100%">
+          <h4>Движенни вверих</h4>
+          <p>Спортивные фильмы – произведения кинематографического искусства, основной темой которых является спорт и все что с ним непосредственно связано. Спортивные фильмы (а также мультфильмы и сериалы) могут быть документальными и художественными. В числе основных задач большинства фильмов жанра – популяризация спорта и здорового образа жизни.
+
+            Лучшие документальные фильмы про спорт чаще всего рассказывают об известных спортсменах или командах, предоставляя зрителю возможность поближе познакомиться со своими спортивными кумирами и узнать, чем они живут за пределами спортивных площадок. Также они могут «освещать» важные спортивные события, например, открытия и закрытия Олимпиад; рассказывать о нюансах работы спортивных судей; зарождении и развитии различных видов спорта и многом другом. Смотреть такие фильмы очень познавательно.</p>
+        </div>
+      </div>
+      <div class="columne sport">
+        <div class="contente">
+          <img src="img/sport_2.jpg" alt="Mather" style="width:100%" height="100%">
+          <h4>маменькиных сынков</h4>
+          <p>Спортивные фильмы – произведения кинематографического искусства, основной темой которых является спорт и все что с ним непосредственно связано. Спортивные фильмы (а также мультфильмы и сериалы) могут быть документальными и художественными. В числе основных задач большинства фильмов жанра – популяризация спорта и здорового образа жизни.
+
+            Лучшие документальные фильмы про спорт чаще всего рассказывают об известных спортсменах или командах, предоставляя зрителю возможность поближе познакомиться со своими спортивными кумирами и узнать, чем они живут за пределами спортивных площадок. Также они могут «освещать» важные спортивные события, например, открытия и закрытия Олимпиад; рассказывать о нюансах работы спортивных судей; зарождении и развитии различных видов спорта и многом другом. Смотреть такие фильмы очень познавательно.</p>
+        </div>
+      </div>
+      <div class="columne sport">
+        <div class="contente">
+          <img src="img/sport_3.jpg" alt="Children" style="width:100%" height="100%">
+          <h4>Крид</h4>
+          <p>Спортивные фильмы – произведения кинематографического искусства, основной темой которых является спорт и все что с ним непосредственно связано. Спортивные фильмы (а также мультфильмы и сериалы) могут быть документальными и художественными. В числе основных задач большинства фильмов жанра – популяризация спорта и здорового образа жизни.
+
+            Лучшие документальные фильмы про спорт чаще всего рассказывают об известных спортсменах или командах, предоставляя зрителю возможность поближе познакомиться со своими спортивными кумирами и узнать, чем они живут за пределами спортивных площадок. Также они могут «освещать» важные спортивные события, например, открытия и закрытия Олимпиад; рассказывать о нюансах работы спортивных судей; зарождении и развитии различных видов спорта и многом другом. Смотреть такие фильмы очень познавательно.</p>
+        </div>
+      </div>
+
+
+
+    <!-- END GRID -->
+    </div>
+  
+ 
+      
+<script src="js/index.js"></script>
+<script src="js/index8.js"></script>      
+<script src="js/index15.js"></script>
+
+  
+</body>
+</html>
